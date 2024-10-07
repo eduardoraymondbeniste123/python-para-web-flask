@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Notícias</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Últimas Notícias</h1>
+    <a href="{{ url_for('adicionar') }}">Adicionar Nova Notícia</a>
+    <ul>
+        {% for noticia in noticias %}
+        <li>
+            <h2>{{ noticia[1] }}</h2>
+            <p>{{ noticia[2] }}</p>
+            <small>Publicado em: {{ noticia[3] }}</small>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
